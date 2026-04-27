@@ -2,7 +2,9 @@
 
 ## Demo
 
-[Watch Demo Video](Placeholder_Link_for_Video)
+<p align="center">
+   <img src="https://raw.githubusercontent.com/Hou-dini/Hou-dini/main/agentic_portfolio_demo.gif?raw=true"width="750"alt="Project Mirror"/>
+</p>
 
 *Short walkthrough demonstrating multi-agent coordination, task execution, and real workflow automation.*
 
@@ -52,7 +54,7 @@ Most AI projects demonstrate isolated capabilities (chat, retrieval, or automati
 Project Mirror addresses this by:
 
 * Coordinating multiple specialized agents to handle complex, multi-step tasks
-* Integrating with external tools (e.g., Google Calendar) to perform real actions
+* Integrating with external tools (e.g., Google Calendar, Google Meet) to perform real actions
 * Enforcing structured outputs and validation to improve reliability
 * Providing observability into system behavior and failure modes
 
@@ -77,7 +79,7 @@ Project Mirror uses a hierarchical multi-agent architecture, where a central orc
   Runs sandboxed scenarios for domain-specific workflows (e.g., customer support, data analysis).
 
 * **Scheduler Agent**
-  Integrates with Google Calendar via **Model Context Protocol (MCP)** to perform real-time scheduling.
+  Integrates with Google Calendar and Google Meet via **Model Context Protocol (MCP)** to perform real-time scheduling.
 
 ---
 
