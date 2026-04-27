@@ -12,7 +12,7 @@
 
 ## Overview
 
-**Project Mirror** is a multi-agent AI system designed to act as a professional assistant—handling tasks such as information retrieval, scheduling, and technical reasoning through coordinated agents.
+**Project Mirror** is a multi-agent AI system designed to act as a professional representative—handling tasks such as information retrieval, scheduling, and technical reasoning through coordinated agents.
 
 It is built to demonstrate how AI systems can move beyond prototypes into **reliable, task-oriented tools used in real workflows**, where outputs directly influence decisions and actions.
 
