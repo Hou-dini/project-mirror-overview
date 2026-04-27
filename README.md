@@ -27,9 +27,8 @@ graph TD
     
     subgraph "MAS Orchestration (Google ADK)"
         API <--> Nexus{Nexus Orchestrator<br/>Gemini 3.1 Flash-lite}
-        Nexus -- "Delegation / Handoff" --> Researcher[Researcher Agent<br/>Llama 3.3 70B]
-        Nexus -- "Delegation" --> TechLead[Technical Lead Agent<br/>Gemini 3 Flash]
-        Nexus -- "Delegation" --> DemoSpec[Demo Specialist<br/>Scenario Runner]
+        Nexus -- "Delegation" --> Researcher[Researcher Agent<br/>Llama 3.3 70B]
+        Nexus -- "Handoff" --> DemoSpec[Demo Specialist<br/>Scenario Runner]
         Nexus -- "Tool Call (MCP)" --> Scheduler[Scheduler Agent<br/>Google Calendar]
     end
 
@@ -71,9 +70,6 @@ Project Mirror uses a hierarchical multi-agent architecture, where a central orc
 
 * **Research Agent (RAG)**
   Handles retrieval using a vector database (**Weaviate**) with strict context isolation.
-
-* **Technical Agent**
-  Performs system design reasoning, trade-off analysis, and structured explanations.
 
 * **Demo / Simulation Agent**
   Runs sandboxed scenarios for domain-specific workflows (e.g., customer support, data analysis).
