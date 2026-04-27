@@ -15,7 +15,36 @@
 It is built to demonstrate how AI systems can move beyond prototypes into **reliable, task-oriented tools used in real workflows**, where outputs directly influence decisions and actions.
 
 ---
+## System Architecture: The "Nexus-Specialist" Pattern
+Project Mirror employs a hierarchical orchestration pattern where a high-reasoning "Nexus" agent manages a fleet of specialized sub-agents.
 
+```mermaid
+graph TD
+    User([User]) <--> Frontend[Next.js 16 / Tailwind CSS 4]
+    Frontend <--> API[FastAPI Backend]
+    
+    subgraph "MAS Orchestration (Google ADK)"
+        API <--> Nexus{Nexus Orchestrator<br/>Gemini 2.5 Flash}
+        Nexus -- "Delegation / Handoff" --> Researcher[Researcher Agent<br/>Llama 3.3 70B]
+        Nexus -- "Delegation" --> TechLead[Technical Lead Agent<br/>Gemini 2.5 Flash]
+        Nexus -- "Delegation" --> DemoSpec[Demo Specialist<br/>Scenario Runner]
+        Nexus -- "Tool Call (MCP)" --> Scheduler[Scheduler Agent<br/>Google Calendar]
+    end
+
+    subgraph "Knowledge & Tools"
+        Researcher <--> VectorDB[(Weaviate Vector DB)]
+        Researcher <--> Search[Google Search API]
+        DemoSpec <--> MockData[(Isolated Demo Contexts)]
+        Scheduler <--> Calendar[(Google Calendar API)]
+    end
+
+    subgraph "Reliability Layer"
+        Nexus -.-> RedTeam[Adversarial Red-Team]
+        RedTeam -.-> Guardrails[Pydantic Validation]
+        Guardrails -.-> Nexus
+    end
+```
+---
 ## What This Solves
 
 Most AI projects demonstrate isolated capabilities (chat, retrieval, or automation), but struggle to integrate them into systems that are reliable and usable in practice.
